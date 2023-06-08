@@ -33,7 +33,7 @@ export default class Network {
     const protocol = window.location.protocol.replace('http', 'ws')
     const endpoint =
       process.env.NODE_ENV === 'production'
-        ? `${protocol}//${import.meta.env.VITE_SERVER_HOST}`
+        ? `${import.meta.env.VITE_SERVER_HOST}`
         : `${protocol}//${window.location.hostname}:2567`
     this.client = new Client(endpoint)
     this.joinLobbyRoom().then(() => {
