@@ -99,7 +99,7 @@ const RoomDescription = styled.div`
   justify-content: center;
 `
 
-const StyledFab = styled(Fab)<{ target?: string }>`
+const StyledFab = styled(Fab) <{ target?: string }>`
   &:hover {
     color: #1ea2df;
   }
@@ -115,6 +115,10 @@ export default function HelperButtonGroup() {
   const roomName = useAppSelector((state) => state.room.roomName)
   const roomDescription = useAppSelector((state) => state.room.roomDescription)
   const dispatch = useAppDispatch()
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
 
   return (
     <Backdrop>
@@ -143,9 +147,8 @@ export default function HelperButtonGroup() {
             <RoomDescription>
               <ArrowRightIcon /> Description: {roomDescription}
             </RoomDescription>
-            <p className="tip">
-              <LightbulbIcon />
-              Shareable link coming up 😄
+            <p className="tip" onClick={copyToClipboard}>
+              {window.location.href}
             </p>
           </Wrapper>
         )}
