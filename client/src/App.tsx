@@ -51,11 +51,11 @@ function App() {
   const roomJoined = useAppSelector((state) => state.room.roomJoined)
   const currentRoom = useAppSelector((state) => state.room.roomId)
 
-  const [password, setPassword] = useState(null)
+  const [password, setPassword] = useState('')
   const [showPasswordDialog, setShowPasswordDialog] = useState(false)
   const [showPasswordError, setShowPasswordError] = useState(false)
   const [passwordFieldEmpty, setPasswordFieldEmpty] = useState(false)
-  const [selectedRoom, setSelectedRoom] = useState<string | null>(null)
+  const [selectedRoom, setSelectedRoom] = useState<string>('')
 
   const handleEnterRoom = (roomId: string , password: string | null) => {
     console.log('Entering Room', roomId)
