@@ -91,8 +91,13 @@ export default class Bootstrap extends Phaser.Scene {
     this.scene.launch('background', { backgroundMode })
   }
 
-  launchGame() {
-    if (!this.preloadComplete) return
+  launchGame = async () => {
+    if (!this.preloadComplete) {
+      await new Promise(resolve => {
+        this.load.on('complete', resolve);
+      });
+    }
+    
     this.network.webRTC?.checkPreviousPermission()
     this.scene.launch('game', {
       network: this.network,

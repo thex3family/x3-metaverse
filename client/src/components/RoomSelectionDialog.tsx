@@ -182,14 +182,13 @@ export default function RoomSelectionDialog() {
             <>
               <Title>The Co-x3 Family Metaverse</Title>
               <Content>
-                
                 <video autoPlay muted playsInline loop width="75%">
                   <source src={animatedLogo} type="video/mp4"
                   />
                   <img src={logo}/>
                 </video>
                 <Button variant="contained" color="secondary" onClick={handleConnect}>
-                  Join The Adventure
+                  Connect To Public Lobby
                 </Button>
                 <Button
                   variant="outlined"

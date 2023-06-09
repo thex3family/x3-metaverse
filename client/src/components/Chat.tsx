@@ -17,6 +17,7 @@ import Game from '../scenes/Game'
 import { getColorByString } from '../util'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { MessageType, setFocused, setShowChat } from '../stores/ChatStore'
+import { CustomRoomTable } from './CustomRoomTable'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -225,6 +226,9 @@ export default function Chat() {
       <Wrapper>
         {showChat ? (
           <>
+          {/* <div>
+          <CustomRoomTable />
+          </div> */}
             <ChatHeader>
               <h3>Chat</h3>
               <IconButton
