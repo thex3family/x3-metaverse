@@ -175,7 +175,7 @@ export default function LoginDialog() {
         <h3>{roomName}</h3>
       </RoomName>
       <RoomDescription>
-        <ArrowRightIcon /> {roomDescription}
+        {roomDescription}
       </RoomDescription>
       <Content>
         <Left>

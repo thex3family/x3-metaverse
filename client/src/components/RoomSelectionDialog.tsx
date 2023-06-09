@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../images/logo.png'
+import animatedLogo from '../images/animated_logo.mp4'
 import styled from 'styled-components'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
@@ -179,18 +180,23 @@ export default function RoomSelectionDialog() {
             </CustomRoomWrapper>
           ) : (
             <>
-              <Title>Welcome to SkyOffice</Title>
+              <Title>The Co-x3 Family Metaverse</Title>
               <Content>
-                <img src={logo} alt="logo" />
+                
+                <video autoPlay muted playsInline loop width="75%">
+                  <source src={animatedLogo} type="video/mp4"
+                  />
+                  <img src={logo}/>
+                </video>
                 <Button variant="contained" color="secondary" onClick={handleConnect}>
-                  Connect to public lobby
+                  Join The Adventure
                 </Button>
                 <Button
                   variant="outlined"
                   color="secondary"
                   onClick={() => (lobbyJoined ? setShowCustomRoom(true) : setShowSnackbar(true))}
                 >
-                  Create/find custom rooms
+                  Explore Custom Rooms
                 </Button>
               </Content>
             </>
