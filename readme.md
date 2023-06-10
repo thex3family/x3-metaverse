@@ -92,6 +92,11 @@ cd SkyOffice/client or 'my-folder-name/client'
 yarn && yarn dev
 ```
 
+## Hosting
+Client: Inside the root folder there is a netlify.toml file. This makes it easy to deploy our client over on Netlify. All you have to do it just connect the github repository and Netlify will do the rest following the instructions from the .toml file.
+Server: Go to heroku and deploy from Github, it will give you a SSL encrypted site link that you can then use and add to your environment variables under VITE_SERVER_URL (without the port number).
+
+
 ## Credits 🎉
 
 Big thanks to this great repo - [ourcade/phaser3-typescript-parcel-template](https://github.com/ourcade/phaser3-typescript-parcel-template)
